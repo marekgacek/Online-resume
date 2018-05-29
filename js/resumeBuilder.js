@@ -139,3 +139,34 @@ for (var k = 0; k < education.onlineCourses.length; k++) {
 
 };
 displayEducation();
+var projects = {
+    "projects": [{
+        "title": "Memory Game",
+        "description": "A complete browser-based card matching game (also known as Concentration) "  +
+            "Technologies used: HTML, CSS, JS",
+        "dates": "April, 2018",
+        "images": ["images/memorygame.png"]
+    },{
+        "title": "Arcade Game",
+        "description": "Arcade Game clone " +
+            "Technologies used: Object Oriented JavaScript ,HTML, CSS, HTML5 Canvas.",
+        "dates": "May, 2018",
+        "images": ["images/arcadegame.png"]
+    }]
+
+  };
+function displayProjects() {
+  for (var i = 0; i < projects.projects.length; i++) {
+      $("#projects").append(HTMLprojectStart);
+
+      $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
+      $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
+      $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
+      // $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images));
+
+      for (var j = 0; j < projects.projects[i].images.length; j++) {
+          $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
+      }
+  }
+}
+displayProjects();
