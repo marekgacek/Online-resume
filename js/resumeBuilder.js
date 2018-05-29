@@ -170,3 +170,6 @@ function displayProjects() {
   }
 }
 displayProjects();
+
+//map
+$("#mapDiv").append(googleMap);
